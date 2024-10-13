@@ -5,6 +5,8 @@ import { map } from 'rxjs';
 import { Router } from '@angular/router';
 import { ApiResponse } from '../../models/api-response';
 import { RegisterPayload } from '../../models/Register-payload';
+import {jwtDecode} from 'jwt-decode';
+
 
 @Injectable({
   providedIn: 'root'
@@ -68,6 +70,42 @@ isLoggedin = signal<boolean>(false);
        );
   }
  
+
+  getTokenClaims(): any {
+    const token = this.getUserToken();
+    if (!token) return null;
+  
+    try {
+      const decoded: any = jwtDecode(token);
+      const tokenClaims = {
+        id: decoded['id'],
+        name: decoded['name'],
+        email: decoded['email'],
+        roles: decoded['roles']
+      }
+      return tokenClaims;
+    } catch (error) {
+      console.error("Token decoding failed:", error);
+      return null;
+    }
+  }
+  
+  isTokenExpired(): boolean {
+    const token = this.getUserToken();
+    if (!token) return true; 
+  
+    try {
+      const decoded: any = jwtDecode(token); 
+      const isTokenExpired = Date.now() >= decoded['exp']! * 1000;     
+      if(isTokenExpired) this.logout();
+        return isTokenExpired;
+    } catch (error) {
+      console.error("Token decoding failed:", error);
+      return true; 
+    }
+  }
+
+
   logout(){
     this.isLoggedin.update(()=>false);
     localStorage.removeItem('token');
