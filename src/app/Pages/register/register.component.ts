@@ -28,7 +28,7 @@ export class RegisterComponent {
 
 sellerRegister(){
 
-  this.auth.registerSerller(this.form.value).subscribe(
+  this.auth.registerSeller(this.form.value).subscribe(
     (response)=>{
            
       console.log(response);

@@ -1,0 +1,80 @@
+<div class="d-flex wv-100 align-items-end" style="height: 500px; border-radius: 15px; margin: 5px; background-image:
+ url('https://cdn.shopify.com/s/files/1/0070/7032/articles/ecommerce_20shopping_20cart_4c343e41-1041-49d3-bca8-3d7d1aa06d90.png?v=1729263457&originalWidth=1848&originalHeight=782&width=1800https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDWKuIfa_oj-svT778rE0uABlwe0HNtlTDqg&s');
+  background-size: cover; background-position: center; overflow: hidden;">
+
+<div class="container p-4">
+    <div class="row justify-content-start align-items-center">
+      <!-- Search Input -->
+      <div class="col-lg-3 col-md-4 col-sm-6 px-3 mb-3">
+        <input type="text" (input)="onSearchChange($event, 'search')"
+               class="form-control border-light bg-light text-dark custom-input"
+               placeholder="Search">
+      </div>
+      <!-- Category Input -->
+      <div class="col-lg-3 col-md-4 col-sm-6 px-3 mb-3">
+        <input type="text" (input)="onSearchChange($event, 'category')"
+               class="form-control border-light bg-light text-dark custom-input"
+               placeholder="Category">
+      </div>
+      <!-- Min Price Input -->
+      <div class="col-lg-3 col-md-4 col-sm-6 px-3 mb-3">
+        <input type="number" (input)="onSearchChange($event, 'minPrice')"
+               class="form-control border-light bg-light text-dark custom-input"
+               placeholder="Min Price">
+      </div>
+      <!-- Max Price Input -->
+      <div class="col-lg-3 col-md-4 col-sm-6 px-3 mb-3">
+        <input type="number" (input)="onSearchChange($event, 'maxPrice')"
+               class="form-control border-light bg-light text-dark custom-input"
+               placeholder="Max Price">
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div>
+    <div class="container py-3">
+        <div class="row">
+       @for( item of products;track item.id)
+       {
+        <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+            <a href="#" style="text-decoration: none;">
+                <div class="card text-center">
+                    <!-- Product image, use item.Picture for dynamic images -->
+                    <img [src]="item.Picture ? item.Picture : 'data:image/jpeg;base64,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'"
+                         alt="{{ item.name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    
+                    <div class="card-body">
+                        <h2 class="card-title">{{ item.name }}</h2>
+                        <h4 class="card-title">{{ item.brand }}</h4>
+                        <p class="card-text">{{ item.price }} $</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+       }
+    
+        </div>
+    </div>
+       
+    
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <!-- Previous button -->
+            <li class="page-item" [class.disabled]="pageIndex === 1">
+                <button class="page-link" (click)="onPageChange(pageIndex - 1)">Previous</button>
+            </li>
+    
+            <!-- Dynamic page numbers -->
+            <li *ngFor="let page of [].constructor(totalPages); let i = index" class="page-item" [class.active]="i + 1 === pageIndex">
+                <button class="page-link" (click)="onPageChange(i + 1)">{{ i + 1 }}</button>
+            </li>
+    
+            <!-- Next button -->
+            <li class="page-item" [class.disabled]="pageIndex === totalPages">
+                <button class="page-link" (click)="onPageChange(pageIndex + 1)">Next</button>
+            </li>
+        </ul>
+    </nav>
+</div>

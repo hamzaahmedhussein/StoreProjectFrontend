@@ -1,4 +1,4 @@
-<header class="p-3 text-bg-dark">
+<header class="p-3 " style="background-color: #295b40;">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-between ">
 
@@ -6,7 +6,7 @@
     <div>
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a class="nav-link px-2 text-white"  routerLink="/dashboard" routerLinkActive="router-link-active">Dashboard</a></li>
+          <li><a class="nav-link px-2 text-white"  routerLink="/home" routerLinkActive="router-link-active">Dashboard</a></li>
           <li><a class="nav-link px-2 text-white"  routerLink="/profile" routerLinkActive="router-link-active">Profile</a></li>
         </ul>
       </ul>
@@ -16,9 +16,9 @@
       <div>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            @if(false)
+            @if(authService.isLoggedin())
          {
-          <li> <a class="nav-link px-2 text-white" href="" >
+          <li> <a class="nav-link px-2 text-white" (click)="authService.logout()" >
             Logout
           </a></li>
 

@@ -1,11 +1,11 @@
 import { Component, effect, inject, Injector, OnInit } from '@angular/core';
-import {  RouterOutlet } from '@angular/router';
+import {  RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterLink,RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
