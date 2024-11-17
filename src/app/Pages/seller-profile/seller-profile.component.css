@@ -1,0 +1,164 @@
+
+.profile-container{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-color: dimgrey;
+    margin: 0 40px;
+    flex-direction: column;
+}
+.profile-card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: dimgrey;
+    width: 100%;
+}
+.profile-card{
+    position: relative;
+    display: flex;
+    align-items: start;
+    background-color: white;
+    height: 200px;
+    width: 100%;
+    margin-top: 100px;
+}
+.profile-name {
+    font-family: 'Arial', sans-serif; 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: #333;
+    text-align: center;
+    margin: 10px 0; 
+    text-transform: capitalize; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+    position: absolute;
+    bottom: 5px;
+    left: 110px;
+  }
+  
+  .stats-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .stat-title {
+    color: gray;
+    margin: 0;
+  }
+  .rating {
+    display: flex;
+    gap: 5px;
+    font-size: 2rem; 
+    position: absolute;
+    right: 50px;
+    top: 30px;
+  }
+  
+  .star {
+    color: gold;
+    transition: color 0.3s;
+  }
+  
+
+  .toggle-buttons {
+    display: flex; 
+    width: 100%;
+    align-items: center;
+    justify-content: start;
+    background-color: white;
+    padding: 20px 0;
+  }
+
+
+  .toggle-button {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    margin: 0 10px;
+
+    border-radius: 5px;
+
+}
+
+
+
+.active {
+    background-color:darkslategrey;
+    color: white;
+  }
+  
+  .inactive {
+    background-color: white;
+    color:#333;
+  }
+  .order{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+   background-color: white;
+  }
+
+ 
+  th, td {
+    text-align: center;
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table-button{
+    padding: 3px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    margin: 0 10px;
+    background-color:darkslategrey;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .products-tab-container {
+    display: flex;
+    padding: 10px 0 ;
+    align-items: center;
+    justify-content: start;
+    width: 100%; 
+    background-color: white;
+  }
+  .add-button{
+    padding: 5px 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    margin: 0 10px;
+    background-color:darkslategrey;
+    color: white;
+    border-radius: 5px;
+  }

@@ -1,0 +1,109 @@
+<div
+ class="profile-container"
+>
+<div class="profile-card-container">
+  <div
+  class="profile-card"
+  >
+    <img
+      src="assets/backgrounds/login.jpg"
+      alt="Circular Image"
+      style="
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        border: 5px solid white;
+      "
+    />
+
+    <p class="profile-name" > {{ profile?.name }}</p>
+
+
+    <div class="rating" data-rating="4.5">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9734;</span>
+    </div>
+    
+  </div>
+
+</div>
+  <div class="stats-container">
+    <div class="stat-item">
+      <p class="stat-number">245</p>
+      <p class="stat-title">Products Sold</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-number">$18,320</p>
+      <p class="stat-title">Total Revenue</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-number">95%</p>
+      <p class="stat-title">Positive Feedback</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-number">38</p>
+      <p class="stat-title">Active Listings</p>
+    </div>
+  </div>
+  <div class="toggle-buttons">
+    <button 
+      id="productsBtn" 
+      class="toggle-button"
+      [ngClass]="activeTab === 'products' ? 'active' : 'inactive'" 
+      (click)="setActiveTab('products')">
+      Products
+    </button>
+    
+    <button 
+      id="ordersBtn" 
+      class="toggle-button"
+      [ngClass]="activeTab === 'orders' ? 'active' : 'inactive'" 
+      (click)="setActiveTab('orders')">
+      Orders
+    </button>
+  </div>
+  
+  <div *ngIf="activeTab === 'products'" class="products-tab-container">
+    <div class="add-product-button-container">
+      <button class="add-button">Add Product</button>
+    </div>
+  </div>
+  
+  <div style="width: 100%;" *ngIf="activeTab === 'orders'">
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer Name</th>
+          <th>Order Date</th>
+          <th>Status</th>
+          <th>Total Amount</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Hamza</td>
+          <td>4/4/2022</td>
+          <td>Pending</td>
+          <td>10$</td>
+          <td>
+            <button class="table-button">View</button>
+            <button class="table-button">Update Status</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
+</div>

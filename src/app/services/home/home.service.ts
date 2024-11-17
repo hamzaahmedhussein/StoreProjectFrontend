@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../../models/api-response';
+import { environment } from '../../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class HomeService {
     }
 
 
-    return this._http.get<ApiResponse>('http://localhost:5291/api/Products', {  params });
+    return this._http.get<ApiResponse>( `${environment.BaseURL}/api/Products`, {  params });
 
   }
 }
